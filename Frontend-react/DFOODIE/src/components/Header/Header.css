@@ -1,0 +1,43 @@
+.header {
+    height: 38vw;
+    width: 87vw;
+    margin-top: 95px;
+    margin-left: -60px;
+    background: url('src/assets/home-page-back2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+.header-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    bottom: 20%;
+    width: 60%;
+    left: 6vw;
+    gap: 1.5vw;
+    animation: fadein 2s;
+}
+.header-content-h1 {
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    text-align: left;
+    font-size: max(4.5vw,22px);
+}
+.header-content p {
+    font-weight: 500;
+    color: white;
+    font-size: 1vw;
+}
+.header-content-button {
+    border: none;
+    color: #4a4545;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw,12px);
+    border-radius: 30px;
+}
