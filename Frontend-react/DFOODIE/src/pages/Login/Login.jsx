@@ -1,26 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const correctEmail = "user@gmail.com"; 
   const correctPassword = "1"; 
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === correctPassword) {
+
+    if (email === correctEmail && password === correctPassword) {
+      setError("");
       alert("Login Successful!");
-      navigate("/dashboard");
+      navigate("/"); 
     } else {
-      alert("Incorrect Password. Try Again.");
+      setError("Invalid email or password");
     }
   };
 
   return (
     <div style={styles.container}>
-      <h2>Sign In</h2>
+      <h2>Login</h2>
       <form onSubmit={handleLogin} style={styles.form}>
         <input
           type="email"
@@ -38,7 +42,8 @@ const SignIn = () => {
           required
           style={styles.input}
         />
-        <button type="submit" style={styles.button}>Sign In</button>
+        {error && <p style={styles.error}>{error}</p>}
+        <button type="submit" style={styles.button}>Login</button>
       </form>
     </div>
   );
@@ -65,6 +70,10 @@ const styles = {
     borderRadius: "5px",
     border: "1px solid #ccc",
   },
+  error: {
+    color: "red",
+    fontSize: "14px",
+  },
   button: {
     padding: "10px",
     fontSize: "18px",
@@ -76,4 +85,4 @@ const styles = {
   }
 };
 
-export default SignIn;
+export default Login;

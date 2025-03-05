@@ -15,6 +15,7 @@
   import Delivery from './pages/Delivery/Delivery';
   import PlaceOrder from './pages/Order/PlaceOrder';
 import ScrollToTop from './ScrollToTop';
+import Login from './pages/Login/Login';
 
 
   const App = () => { 
@@ -26,6 +27,7 @@ import ScrollToTop from './ScrollToTop';
       <div className='app-all'>
       <div className='app'>
         <ScrollToTop />
+        
         <Navbar menu={menu} />
         <Routes>
           <Route path='/' element={<Header menu={menu} />} />
