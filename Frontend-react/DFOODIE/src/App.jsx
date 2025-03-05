@@ -32,7 +32,7 @@ const App = () => {
         <div className='app-all'>
           <div className='app'>
             <ScrollToTop />
-            <Navbar menu={menu} />
+            <Navbar menu={menu} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
             <Routes>
               <Route path="/" element={<Header menu={menu} />} />
               <Route path="/Menu" element={<MenuProvider> <Menu /></MenuProvider>} />

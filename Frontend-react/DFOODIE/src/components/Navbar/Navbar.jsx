@@ -4,9 +4,13 @@ import './Navbar.css';
 import { useDispatch } from 'react-redux';
 import { MenuBar } from '../../features/Menubar/MenuSlice';
 
-const Navbar = ({ menu }) => {
+const Navbar = ({ menu , isAuthenticated , setIsAuthenticated }) => {
   const dispatch = useDispatch();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const handleLogout = (e) => {
+    e.preventDefault();
+      setIsAuthenticated(false);
+  };
 
   return (
     <nav className="navbar">
@@ -34,7 +38,13 @@ const Navbar = ({ menu }) => {
         <div className="navbar-search-icon">
           <Link to='/Cart'><img src="src/assets/shopping-cart.svg" alt="cart" style={{ width: 30 }} /></Link>
         </div>
-        <button>sign in</button>
+        {
+          isAuthenticated ? (
+            <button onClick={handleLogout} >Log Out</button>
+          ) :(
+            <button>Sign In</button>
+          )
+        }
       </div>
     </nav>
   );
