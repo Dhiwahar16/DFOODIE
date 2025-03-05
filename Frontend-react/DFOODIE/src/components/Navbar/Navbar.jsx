@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import { useDispatch } from 'react-redux';
 import { MenuBar } from '../../features/Menubar/MenuSlice';
+import { useDispatch } from 'react-redux';
+import { loginAuth } from '../../features/LoginAuth/LoginAuthSlice';
 
-const Navbar = ({ menu , isAuthenticated , setIsAuthenticated }) => {
+const Navbar = ({ menu, loginauth }) => {
   const dispatch = useDispatch();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const handleLogout = (e) => {
-    e.preventDefault();
-      setIsAuthenticated(false);
-  };
 
   return (
     <nav className="navbar">
@@ -39,9 +36,9 @@ const Navbar = ({ menu , isAuthenticated , setIsAuthenticated }) => {
           <Link to='/Cart'><img src="src/assets/shopping-cart.svg" alt="cart" style={{ width: 30 }} /></Link>
         </div>
         {
-          isAuthenticated ? (
-            <button onClick={handleLogout} >Log Out</button>
-          ) :(
+          loginauth ? (
+            <button onClick={() => dispatch(loginAuth(false))}>Log Out</button>
+          ) : (
             <button>Sign In</button>
           )
         }

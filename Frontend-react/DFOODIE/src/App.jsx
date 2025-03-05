@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Menu from './components/Menu/Menu';
 import Contact from './components/Contact/Contact';
@@ -21,21 +21,20 @@ const App = () => {
   const category = useSelector((state) => state.category.value);
   const menu = useSelector((state) => state.menu.value);
   const cartitems = useSelector((state) => state.cart.value);
-
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const loginauth = useSelector((state) => state.loginauth.value);
 
   return (
     <div>
-      {!isAuthenticated ? (
-        <Login setIsAuthenticated={setIsAuthenticated} />
+      {!loginauth ? (
+        <Login />
       ) : (
         <div className='app-all'>
           <div className='app'>
             <ScrollToTop />
-            <Navbar menu={menu} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+            <Navbar menu={menu} loginauth={loginauth} />
             <Routes>
               <Route path="/" element={<Header menu={menu} />} />
-              <Route path="/Menu" element={<MenuProvider> <Menu /></MenuProvider>} />
+              <Route path="/Menu" element={<MenuProvider><Menu /></MenuProvider>} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/About" element={<About />} />
               <Route path="/Items" element={<ItemProvider><Items cartitems={cartitems} category={category} /></ItemProvider>} />

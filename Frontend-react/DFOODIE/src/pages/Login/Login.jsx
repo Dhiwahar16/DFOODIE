@@ -1,85 +1,42 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginAuth } from "../../features/LoginAuth/LoginAuthSlice";
+import "./login.css"
 
-const Login = ({ setIsAuthenticated }) => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const correctEmail = "user@gmail.com"; 
-  const correctPassword = "1"; 
+  const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    if (email === correctEmail && password === correctPassword) {
+    if (email === "user@gmail.com" && password === "1") {
       setError("");
-      setIsAuthenticated(true);
+      dispatch(loginAuth(true)); 
     } else {
       setError("Invalid email or password");
     }
   };
 
   return (
-    <div style={styles.container}>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin} style={styles.form}>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          style={styles.input}
-        />
-        <input
-          type="password"
-          placeholder="Enter your password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-          style={styles.input}
-        />
-        {error && <p style={styles.error}>{error}</p>}
-        <button type="submit" style={styles.button}>Login</button>
+    <div className="login" >
+      <div className="login1">
+      <h2 className="login-h2" >Login</h2>
+      <div className="login-form" >
+      <form className="login-form1" onSubmit={handleLogin}>
+        <div className="login-form2">
+        <input className="login-int1" type="email" placeholder="Enter your email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <input className="login-int1" type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        </div>
+        {error && <p className="logintxt" >{error}</p>}
+        <button className="login-btn" type="submit">Login</button>
       </form>
+      </div>
+      </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    width: "300px",
-    margin: "100px auto",
-    padding: "20px",
-    textAlign: "center",
-    border: "1px solid #ddd",
-    borderRadius: "10px",
-    boxShadow: "2px 2px 10px rgba(0,0,0,0.1)",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  input: {
-    padding: "10px",
-    margin: "10px 0",
-    fontSize: "16px",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-  },
-  error: {
-    color: "red",
-    fontSize: "14px",
-  },
-  button: {
-    padding: "10px",
-    fontSize: "18px",
-    background: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  }
 };
 
 export default Login;
