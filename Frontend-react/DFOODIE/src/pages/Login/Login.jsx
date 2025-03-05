@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   const correctEmail = "user@gmail.com"; 
   const correctPassword = "1"; 
@@ -15,8 +13,7 @@ const Login = () => {
 
     if (email === correctEmail && password === correctPassword) {
       setError("");
-      alert("Login Successful!");
-      navigate("/"); 
+      setIsAuthenticated(true);
     } else {
       setError("Invalid email or password");
     }
