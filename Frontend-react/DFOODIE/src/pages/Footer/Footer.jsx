@@ -34,9 +34,9 @@ const Footer = ({menu}) => {
         <div className='footer-followus'>
             <h2>Follow us</h2>
             <div className='footer-img'>
-                <img src='src/assets/insta.png' alt='Instagram' />
-                <img src='src/assets/facebook.png' alt='FaceBook' />
-                <img src='src/assets/linkedin.png' alt='Linked In' />
+                <img src='/assets/insta.png' alt='Instagram' />
+                <img src='/assets/facebook.png' alt='FaceBook' />
+                <img src='/assets/linkedin.png' alt='Linked In' />
             </div>
         </div>
     </div>

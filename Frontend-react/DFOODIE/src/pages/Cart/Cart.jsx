@@ -26,14 +26,14 @@ const Cart = ({cartitems}) => {
             <div className='item-quantity'>
                 <div className='item-quantity-btn '>
                   <div className='item-quantity-btn-img'>
-                  <img src='src/assets/minus-add.svg' onClick={() => dispatch(removeFromCart(item.id))} />
+                  <img src='/assets/minus-add.svg' onClick={() => dispatch(removeFromCart(item.id))} />
                   <span>{item.count}</span>
-                  <img src='src/assets/plus-add.svg' onClick={() => dispatch(addToCart(item))} />
+                  <img src='/assets/plus-add.svg' onClick={() => dispatch(addToCart(item))} />
                   </div>
                   <p>Cost:{item.count * item.price}</p>
                 </div>
                 <div className='item-remove'>
-                  <img src="src/assets/rubbish-bin.png" alt="Remove" onClick={()=> dispatch(removeitem(item.id))}/>
+                  <img src="/assets/rubbish-bin.png" alt="Remove" onClick={()=> dispatch(removeitem(item.id))}/>
                 </div>
                 </div>
           </div>

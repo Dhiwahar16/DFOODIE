@@ -26,13 +26,13 @@ const Items = ({category,cartitems}) => {
             <div className='item-card-img'>
             <img src={item.image} alt={item.name} className='item-card-img-img' />
             { !cartitems[item.id] ?
-              (<img src='src/assets/plus-add.svg' className='item-cart-btn1' onClick={() =>dispatch(addToCart({id:item.id,name:item.name,
+              (<img src='/assets/plus-add.svg' className='item-cart-btn1' onClick={() =>dispatch(addToCart({id:item.id,name:item.name,
                 price:item.price,img:item.image,title:item.title}))}  />)
               :
               (<div className='item-cart-btn '>
-              <img src='src/assets/minus-add.svg' onClick={() =>dispatch(removeFromCart(item.id))}  />
+              <img src='/assets/minus-add.svg' onClick={() =>dispatch(removeFromCart(item.id))}  />
               <span>{cartitems[item.id].count}</span>
-              <img src='src/assets/plus-add.svg' onClick={() =>dispatch(addToCart(item))}  />
+              <img src='/assets/plus-add.svg' onClick={() =>dispatch(addToCart(item))}  />
               </div>)
             }
             </div>

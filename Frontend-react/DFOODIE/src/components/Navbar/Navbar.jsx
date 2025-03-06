@@ -11,7 +11,7 @@ const Navbar = ({ menu, loginauth }) => {
 
   return (
     <nav className="navbar">
-      <img src="src/assets/DFOODIE.png" alt="DFOODIE" className="logo" />
+      <img src="/assets/DFOODIE.png" alt="DFOODIE" className="logo" />
 
       <div className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
         ☰
@@ -31,9 +31,9 @@ const Navbar = ({ menu, loginauth }) => {
         </li>
       </ul>
       <div className="navbar-right">
-        <img src="src/assets/search-line.svg" alt="search" style={{ width: 30 }} />
+        <img src="/assets/search-line.svg" alt="search" style={{ width: 30 }} />
         <div className="navbar-search-icon">
-          <Link to='/Cart'><img src="src/assets/shopping-cart.svg" alt="cart" style={{ width: 30 }} /></Link>
+          <Link to='/Cart'><img src="/assets/shopping-cart.svg" alt="cart" style={{ width: 30 }} /></Link>
         </div>
         {
           loginauth ? (

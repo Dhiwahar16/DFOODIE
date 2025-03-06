@@ -3,7 +3,7 @@
     width: 87vw;
     margin-top: 95px;
     margin-left: -60px;
-    background: url('src/assets/home-page-back2.jpg');
+    background: url('/assets/home-page-back2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
