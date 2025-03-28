@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+//Slice to store the value of category 
 
+import { createSlice } from "@reduxjs/toolkit";
 
 const CategorySlice=createSlice({
     name:"category",

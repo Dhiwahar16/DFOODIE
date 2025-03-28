@@ -1,3 +1,6 @@
+//Final page to order by payment gateway 
+//        Working on it till not completed 
+
 import React, { useEffect, useState } from 'react';
 import './PlaceOrder.css';
 

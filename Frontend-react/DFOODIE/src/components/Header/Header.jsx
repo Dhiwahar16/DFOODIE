@@ -1,10 +1,12 @@
-import React from 'react'
+//Home page for website ( first page when enter )
+
+import React from "react";
 import { Link } from "react-router-dom";
 import './Header.css'
 import { useDispatch } from 'react-redux';
 import { MenuBar } from '../../features/Menubar/MenuSlice';
 
-const Header = ({menu}) => {
+const Header = ({ menu }) => {
   const dispatch=useDispatch();
   return (
     <div className='header'>

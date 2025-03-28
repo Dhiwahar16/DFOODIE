@@ -1,3 +1,5 @@
+//About page in website
+
 import React from 'react'
 import './About.css'
 

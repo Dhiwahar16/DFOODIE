@@ -1,3 +1,5 @@
+//Login auth Slice used to Store the user login untill user close the tab
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const LoginAuthSlice = createSlice({

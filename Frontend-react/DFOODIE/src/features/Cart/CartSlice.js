@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+//Slice to add remove items in cart and to change count
 
+import { createSlice } from "@reduxjs/toolkit";
 
 const CartSlice=createSlice({
     name:"cart",

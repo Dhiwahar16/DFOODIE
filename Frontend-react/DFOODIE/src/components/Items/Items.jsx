@@ -1,3 +1,5 @@
+//used to get items to display ( by using use context )
+
 import React, { useContext } from 'react'
 import './Items.css'
 import { Link } from 'react-router-dom';

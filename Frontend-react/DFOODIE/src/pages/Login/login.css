@@ -9,11 +9,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     border-radius: 15px;
     background: white;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    width: 420px;
+    width: 450px;
 }
 .login-h2 {
     font-size: 32px;
@@ -30,6 +31,7 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 .login-form2 {
     display: flex;
@@ -74,4 +76,24 @@
 .login-btn:active {
     background: #003d82;
     transform: scale(0.98);
+}
+.signup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.sign-up-btn {
+    font-size: 14px;
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.sign-up-btn:hover {
+    text-decoration: underline;
 }

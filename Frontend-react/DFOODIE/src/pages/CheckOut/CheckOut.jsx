@@ -1,3 +1,5 @@
+//used to create the checkout page which shows a pre bill and products
+
 import React from 'react'
 import './CheckOut.css'
 import { Link } from 'react-router-dom';

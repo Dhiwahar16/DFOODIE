@@ -1,3 +1,5 @@
+//used for session storage ( used Redux )
+
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from 'redux-persist';
 import sessionStorage from "redux-persist/lib/storage/session";

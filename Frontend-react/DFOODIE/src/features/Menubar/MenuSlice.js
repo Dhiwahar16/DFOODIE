@@ -1,3 +1,5 @@
+//used to get and store the menu bar action and display css
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const MenuSlice=createSlice({
