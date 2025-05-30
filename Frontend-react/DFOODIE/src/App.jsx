@@ -27,14 +27,15 @@ const App = () => {
 
   return (
     <div>
-      {!loginauth ? (
+       {/* {!loginauth ? (
         <Login />
-      ) : (
+      ) : (  */}
         <div className='app-all'>
           <div className='app'>
             <ScrollToTop />
             <Navbar menu={menu} loginauth={loginauth} />
             <Routes>
+              <Route path="/Login" element={<Login />} />
               <Route path="/" element={<Header menu={menu} />} />
               <Route path="/Menu" element={<MenuProvider><Menu /></MenuProvider>} />
               <Route path="/Contact" element={<Contact />} />
@@ -48,7 +49,7 @@ const App = () => {
           </div>
           <Footer menu={menu} />
         </div>
-      )}
+       {/* )}  */}
     </div>
   );
 }

@@ -41,7 +41,9 @@ const Navbar = ({ menu, loginauth }) => {
           loginauth ? (
             <button onClick={() => dispatch(loginAuth(false))}>Log Out</button>
           ) : (
-            <button>Sign In</button>
+            <button><Link to="/Login">
+              Sign In
+            </Link></button>
           )
         }
       </div>
