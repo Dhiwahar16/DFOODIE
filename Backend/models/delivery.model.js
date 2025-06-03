@@ -8,8 +8,15 @@ const deliverySchema = new mongoose.Schema({
   age: { type: Number, required: true },
   gender: { type: String, required: true },
   pincode: { type: String, required: true },
-  mobile: { type: String, required: true }
+  mobile: { type: String, required: true },
+
+  cartItems: [{
+    itemName: String,
+    quantity: Number,
+    itemPrice: Number
+  }]
 }, { timestamps: true });
+
 
 const Delivery = mongoose.model('Delivery', deliverySchema);
 

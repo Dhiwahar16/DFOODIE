@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './Delivery.css';
 
-const Delivery = () => {
+const Delivery = ({cartitems}) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -28,6 +28,12 @@ const Delivery = () => {
       }));
     }
   }, []);
+
+  const formattedCart = Object.values(cartitems).map(item => ({
+    itemName: item.name,
+    quantity: item.count,
+    itemPrice: item.price
+  }));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,7 +60,8 @@ const Delivery = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        const res = await axios.post('http://localhost:9000/delivery', formData);
+        const res = await axios.post('http://localhost:9000/delivery', 
+          {...formData,cartItems: formattedCart});
         console.log(res.data);
         setMessage('Delivery details saved!');
         setIsSubmitted(true);

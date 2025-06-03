@@ -27,9 +27,6 @@ const App = () => {
 
   return (
     <div>
-       {/* {!loginauth ? (
-        <Login />
-      ) : (  */}
         <div className='app-all'>
           <div className='app'>
             <ScrollToTop />
@@ -43,13 +40,12 @@ const App = () => {
               <Route path="/Items" element={<ItemProvider><Items cartitems={cartitems} category={category} /></ItemProvider>} />
               <Route path="/Cart" element={<Cart cartitems={cartitems} />} />
               <Route path="/CheckOut" element={<CheckOut cartitems={cartitems} />} />
-              <Route path="/Delivery" element={<Delivery />} />
+              <Route path="/Delivery" element={<Delivery cartitems={cartitems}/>} />
               <Route path="/PlaceOrder" element={<PlaceOrder cartitems={cartitems} />} />
             </Routes>
           </div>
           <Footer menu={menu} />
         </div>
-       {/* )}  */}
     </div>
   );
 }
