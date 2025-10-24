@@ -1,6 +1,6 @@
 {
   "name": "curd-api-test",
-  "version": "1.0.0",
+  "version": "1.0.01",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --env-file=.env server.js"
@@ -12,8 +12,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
-    "mongodb": "^6.15.0",
-    "mongoose": "^8.12.2",
-    "nodemon": "^3.1.9"
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.2",
+    "nodemon": "^3.1.10"
   }
 }
